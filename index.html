@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuizApp for Thinkful</title>
+  <meta name="author" content="Marisa Varner">
+  <meta name="description" content="QuizApp for Thinkful">
+  <meta name="keywords" content="Quiz, QuizApp, Thinkful">
+
+  <!-- Responsive viewport tag, tells small screens that it's responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Normalize.css, a cross-browser reset file -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="index.css" rel="stylesheet">
+  <link href="responsive.css" rel="stylesheet">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="data.js"></script>
+  <script src="index.js"></script>
+</head>
+  <body>
+    <header role="banner">
+       <div class="row">
+        <h1 class="title"></h1>
+      </div>
+    </header>
+    <main role="main">
+      <div class="row">
+        <form id="quiz-app">
+          <fieldset class="page"></fieldset>
+          <fieldset class="question"></fieldset>
+          <fieldset class="answer"></fieldset>
+        </form>
+      </div>
+    </main>
+    <footer role="contentinfo">
+      <div class="row">
+        <div class="col-4">
+          &nbsp;<span class="quizProgress">Question<br /> <span class="quizPosition"></span> of <span class="questionTotal"></span></span>
+        </div>
+        <div class="col-4 center">
+          
+        </div>
+        <div class="col-4 score">
+          <span class="quizProgress">Score<br /> <span class="scoreTally"></span> / <span class="questionTotal"></span></span>
+        </div>
+      </div>
+    </footer>
+    
+  
+  </body>
+</html>
