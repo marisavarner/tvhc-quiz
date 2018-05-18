@@ -1,0 +1,70 @@
+body {
+  font-family: 'Playfair Display', serif;
+  padding-bottom: 60px;
+  background-image: url("https://img.etsystatic.com/il/5cf1e4/1433968825/il_fullxfull.1433968825_gh5v.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+header {
+  background:#C82B26;
+  color: #ffffff;
+}
+h1 {text-align:center;}
+p {text-align:center;}
+form {
+  padding-top:20px;
+}
+form img {
+  width: auto;
+  max-height: 300px;
+  max-width:100%;
+}
+fieldset {
+  text-align:center;
+  background-color: rgba(255, 255, 255, .8);
+  border-radius:5px;
+  border:none;
+}
+legend {
+  background: #C82B26;
+  border-radius: 5px;
+  color: #ffffff;
+  padding:15px;
+  width: 100%;
+}
+button, label {
+  background: #87C45D;
+  border:none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  margin:10px 0;
+  padding:10px;
+  text-align: center;
+  transition: all 0.3s ease-out;
+  width:100%;
+}
+.option > input {display: none;}
+button:hover, label:hover, button:focus, label:focus {
+  background:#70AC46;
+}
+footer {
+  background:#87C45D;
+  color: #ffffff;
+  left: 0;
+  bottom:0;
+  height:75px;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 5px 10px #70AC46 inset;
+  text-align: center;
+}
+footer .row {padding:15px;}
+footer .center {text-align:center;}
+footer img {
+  height: auto;
+  width:50px;
+  margin-left:auto;
+  margin-right:auto;
+}
