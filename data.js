@@ -3,22 +3,22 @@ let score = 0;
 let page = 0;
 
 const title = 'The Very Hungry Caterpillar';
-const footer = '<img src="https://www.bnlicensing.com/images/properties/the-very-hungry-caterpillar-teaser.png" alt="The Very Hungry Caterpillar by Eric Carle" />';
+const footer = '<img src="images/caterpillar.png" alt="The Very Hungry Caterpillar by Eric Carle" />';
 
 const PAGES = [
   {
     page:1,
     text:`One Sunday morning the warm sun came up and —pop!— out of the egg came a tiny and very hungry caterpillar.`,
-    imgSrc:`http://1.bp.blogspot.com/-qi6ZqN7zt4g/UjDmYlfsmFI/AAAAAAAABDU/lCWiUYfB94Y/s1600/caterpillar_editted.jpg`,
-    imgAlt:`A tiny and very hungry caterpillar and a smiling sunrise by Eric Carle.`,
+    imgSrc:`images/warm-sun.jpg`,
+    imgAlt:`A tiny and very hungry caterpillar and a smiling sunrise illustrated by Eric Carle.`,
     buttonClass:`begin`,
     button:`He started to look for some food...`
   },
   {
     page:2,
     text:`He was a beautiful butterfly!`,
-    imgSrc:`https://shop.carlemuseum.org/sites/shop.carlemuseum.org/files/isbn_images/Butterfly.jpg`,
-    imgAlt:`The Very Hungry Caterpillar became a Beautiful Butterfly`,
+    imgSrc:`images/butterfly.jpg`,
+    imgAlt:`The Very Hungry Caterpillar became a Beautiful Butterfly.`,
     buttonClass:`reset`,
     button:`Hatch another egg...`
   }
@@ -28,7 +28,7 @@ const QUESTIONS = [
   {
     number: 1,
     text:`On Monday, what did the caterpillar eat?`,
-    imgSrc:`https://images-na.ssl-images-amazon.com/images/I/71R4SLro-PL._SX463_.jpg`,
+    imgSrc:`images/apple.jpg`,
     imgAlt:`The Very Hungry Caterpillar ate through one apple.`,
     option1:`One Lollipop`,
     option2:`One Balloon`,
@@ -40,7 +40,7 @@ const QUESTIONS = [
   {
     number: 2,
     text:`On Tuesday, what did the caterpillar eat?`,
-    imgSrc:`http://moziru.com/images/plum-clipart-hungry-caterpillar-20.jpg`,
+    imgSrc:`images/pears.jpg`,
     imgAlt:`The Very Hungry Caterpillar ate through two pears.`,
     option1:`Two Pears`,
     option2:`Two Fish`,
@@ -53,7 +53,7 @@ const QUESTIONS = [
   {
     number: 3,
     text:`On Wednesday, what did the caterpillar eat?`,
-    imgSrc:`https://www.proprofs.com/flashcards/upload/q9481030.jpg`,
+    imgSrc:`images/plums.jpg`,
     imgAlt:`The Very Hungry Caterpillar ate through three plums.`,
     option1:`Three Little Pigs`,
     option2:`Three Radishes`,
@@ -66,7 +66,7 @@ const QUESTIONS = [
   {
     number: 4,
     text:`On Thursday, what did the caterpillar eat?`,
-    imgSrc:`https://slate.adobe.com/a/78JY6/images/39C62E5C-F6A1-48EF-B427-BB180EAA5EAE.jpg`,
+    imgSrc:`images/strawberries.jpg`,
     imgAlt:`The Very Hungry Caterpillar ate through four strawberries.`,
     option1:`Four Brussel Sprouts`,
     option2:`Four Strawberries`,
@@ -79,7 +79,7 @@ const QUESTIONS = [
   {
     number: 5,
     text:`On Friday, what did the caterpillar eat?`,
-    imgSrc:`https://ssl-static-content.ravensburger.com/content/wcm/mediadata/images/United%20Kingdom/Characters%20&%20Themes/HungryCaterpillarShow_756x300.jpg`,
+    imgSrc:`images/oranges.jpg`,
     imgAlt:`The Very Hungry Caterpillar ate through five oranges.`,
     option1:`Five Magic Beans`,
     option2:`Five Grapes`,
@@ -91,8 +91,8 @@ const QUESTIONS = [
   },
   {
     number: 6,
-    text:`On Saturday, what did the caterpillar eat?`,
-    imgSrc:`http://nihao-panda.com/wp-content/uploads/2018/03/Ice-Cream.jpg`,
+    text:`On Saturday, what did he eat?`,
+    imgSrc:`images/all.jpg`,
     imgAlt:`The Very Hungry Caterpillar ate through the whole picnic.`,
     option1:`One piece of chocolate cake, one ice-cream cone, one pickle`,
     option2:`One slice of swiss cheese, one slice of salami, one lollipop`,
@@ -105,7 +105,7 @@ const QUESTIONS = [
   {
     number: 7,
     text:`On Sunday, what did the caterpillar eat?`,
-    imgSrc:`https://cdn.shopify.com/s/files/1/0080/8372/products/tattly_eric-carle_one-nice-green-leaf_grande.jpg?v=1515185798`,
+    imgSrc:`images/fat-caterpillar.jpg`,
     imgAlt:`The Very Hungry Caterpillar ate through one nice green leaf.`,
     option1:`Three bowls of porridge`,
     option2:`One Nice Green Leaf`,
@@ -118,7 +118,7 @@ const QUESTIONS = [
   {
     number: 8,
     text:`He built a small house, called a cocoon, around himself. How long did he stay inside?`,
-    imgSrc:`https://i.pinimg.com/originals/13/b1/d5/13b1d50ec43322255b78db24f3978bfa.jpg`,
+    imgSrc:`images/cocoon.jpg`,
     imgAlt:`The Very Hungry Caterpillar stayed inside his cocoon for more than two weeks.`,
     option1:`Forever`,
     option2:`Three minutes`,

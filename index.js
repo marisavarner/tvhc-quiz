@@ -1,5 +1,7 @@
 'use strict';
 
+//Feedback to incorporate: Be careful about what ends up in the DOM and when. There's an empty fieldset lingering in your form, and it shouldn't cause any UX problems, but cleaning it up is a matter of good housekeeping.
+
 function renderPage() {
   $('.title').text(title);
   $('.center').html(footer);
@@ -17,22 +19,18 @@ function renderQuiz() {
   
 function renderQuestion() {
   return `<legend>${QUESTIONS[number].text}</legend>
-            <div class="option" tabindex="1">
-              <input type="radio" id="option1" name="choice" value="${QUESTIONS[number].option1}">
-              <label for="option1">${QUESTIONS[number].option1}</label>
-            </div>
-            <div class="option" tabindex="2">
-              <input type="radio" id="option2" name="choice" value="${QUESTIONS[number].option2}">
-              <label for="option2">${QUESTIONS[number].option2}</label>
-            </div>
-            <div class="option" tabindex="3">
-              <input type="radio" id="option3" name="choice" value="${QUESTIONS[number].option3}">
-              <label for="option3">${QUESTIONS[number].option3}</label>
-            </div>
-            <div class="option" tabindex="4">
-              <input type="radio" id="option4" name="choice" value="${QUESTIONS[number].option4}">
-              <label for="option4">${QUESTIONS[number].option4}</label>
-            </div>`;
+            <button type="button" class="select" tabindex="1" value="${QUESTIONS[number].option1}">
+              <span>${QUESTIONS[number].option1}</span>
+            </button>
+            <button type="button" class="select" tabindex="2" value="${QUESTIONS[number].option2}">
+              <span>${QUESTIONS[number].option2}</span>
+            </button>
+            <button type="button" class="select" tabindex="3" value="${QUESTIONS[number].option3}">
+              <span>${QUESTIONS[number].option3}</span>
+            </button>
+            <button type="button" class="select" tabindex="4" value="${QUESTIONS[number].option4}">
+              <span>${QUESTIONS[number].option4}</span>
+            </button>`;
 }
 
 function beginQuiz() {
@@ -47,6 +45,27 @@ function scoreQuiz() {
  $('.scoreTally').text(score); 
 }
 
+function selectAnswer() {
+  $('.question').on('click', '.select', function (event){
+    
+    $('.question').hide();
+    $('.answer').show();
+    $('.answer').html(renderAnswer());
+    
+    const answer = $( this ).val();
+    
+    if(answer == ANSWERS[number]) {
+      score++;
+      scoreQuiz();
+      $('.checkAnswer').text('Yes!');
+      $('.checkAnswer').parent().addClass('correct');
+    } else {
+      $('.checkAnswer').text('No.');
+      $('.checkAnswer').parent().addClass('incorrect');
+    }
+  });
+}
+
 function renderAnswer() {
   return `<legend><span class="checkAnswer"></span> ${QUESTIONS[number].answer}</legend>
             <img src="${QUESTIONS[number].imgSrc}" alt="${QUESTIONS[number].imgAlt}" />
@@ -54,57 +73,6 @@ function renderAnswer() {
               <button type="button" class="advance" name="advance" value="${QUESTIONS[number].advance}">
               <span>${QUESTIONS[number].advance}</span>
             </button>`;
-}
-
-function selectAnswer() {
-  
-  $('.question').on('click keypress', 'input[name="choice"]', function (event){
-    $('.option').prop( "checked" );
-    $('.question').hide();
-    $('.answer').show();
-    $('.answer').html(renderAnswer());
-    
-    //let selected = $('input:checked');
-    let answer = $('input[name=choice]:checked').val(); //selected.val();
-    alert("hi"+answer); 
-    let isCorrect = checkAnswer(answer);
-    
-    if(isCorrect) {
-      correctAnswer();
-    } else {
-      $('.checkAnswer').text('No.');
-    }
-  });
-}
-
-function dynamicRadio(){
- $('.question').keypress(function (e) {
-    var key = e.which;
-    if(key == 13)  // the enter key code
-    {
-      alert("xyxy");
-    }
-  }); 
-}
-//function dynamicRadio(){
- // $("div").delegate(".question","keydown",function(e){
- //       alert("xxx");
- //   });
-//}
-
-function checkAnswer(answer) {
-  if(answer === ANSWERS[number]) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function correctAnswer() {
-  
-  score++;
-  $('.scoreTally').text(score);
-  $('.checkAnswer').text('Yes!');
 }
 
 function advanceQuiz() {
@@ -138,25 +106,21 @@ function pageQuiz() {
 }
 
 function resetQuiz() {
+// refactor to reset quiz without reloading page    
   $('.page').on('click', '.reset', function (event){
       location.reload();
   } );
 }
 
-
 function handleQuiz() {
-  // this is the callback function responsible for rendering the quiz, responding to user input, tallying score, and paginating
   renderPage();
   renderQuiz();
   beginQuiz();
   questionTotal();
-  dynamicRadio();
   selectAnswer();
   scoreQuiz();
   quizPosition();
   advanceQuiz();
-
 }
 
-// when the page loads, call `handleQuiz`
 $(handleQuiz);
